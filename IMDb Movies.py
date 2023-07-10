@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # Importing Libraries
 
 import pandas as pd
@@ -14,18 +8,12 @@ import requests
 from bs4 import BeautifulSoup
 
 
-# In[2]:
-
-
 #Making a list of the urls since they are split into 5 pages
 urls = ['https://www.imdb.com/search/title/?groups=top_250&sort=user_rating',
        'https://www.imdb.com/search/title/?groups=top_250&sort=user_rating,desc&start=51&ref_=adv_nxt',
        'https://www.imdb.com/search/title/?groups=top_250&sort=user_rating,desc&start=101&ref_=adv_nxt',
        'https://www.imdb.com/search/title/?groups=top_250&sort=user_rating,desc&start=151&ref_=adv_nxt',
        'https://www.imdb.com/search/title/?groups=top_250&sort=user_rating,desc&start=201&ref_=adv_nxt']
-
-
-# In[3]:
 
 
 # Making a list to store the scrapped information
@@ -63,8 +51,6 @@ for url in urls:
     df = pd.DataFrame(df_list, columns = ['movie_name', 'year', 'runtime(min)', 'genre', 'rating', 
                                           'metascore', 'votes', 'gross($)(M)', 'rank'])
 
-
-# In[5]:
 
 
 # Save data to excel file
